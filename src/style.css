@@ -1,0 +1,19 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.navBar {
+
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	background-color: #474FEF;
+	padding: 1vh 2vw;
+}
+
+.navBar button {
+	margin: 1vw;
+}
