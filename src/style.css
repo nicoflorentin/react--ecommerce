@@ -2,6 +2,25 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+
+	/*border: 1px solid black;*/
+}
+
+header {
+	box-shadow: 0px 2px 2px #565656;
+
+	background-color: #7DABFF;
+	width: 90%;
+
+	margin: auto;
+	padding: 1vw;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	height: 60px;
+
 }
 
 .navBar {
@@ -10,10 +29,24 @@
 	align-items: center;
 	justify-content: flex-end;
 
-	background-color: #474FEF;
-	padding: 1vh 2vw;
 }
 
-.navBar button {
-	margin: 1vw;
+.navBar a {
+
+	text-decoration: none;
+	color: black;
+	text-align: center;
+
+	margin: 0 10px;
+
+}
+
+header h1 {
+	color: white;
+	text-shadow: 0px 0px 2px #3F3F3F;
+}
+
+.header__VC {
+	color: red;
+	text-shadow: 0px 0px 2px #3F3F3F;
 }

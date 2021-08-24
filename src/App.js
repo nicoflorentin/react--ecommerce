@@ -1,17 +1,13 @@
-import React from "react"
-import ReactDom from "react-dom"
-
-import NavBar from "./NavBar.js"
+import NavBar from "./components/NavBar.js"
+import ItemListContainer from "./components/ItemListContainer.js"
 
 const App = () => {
+	
 	return (
 		<>
-
-		<NavBar />
-
+			<NavBar />
+			<ItemListContainer />
 		</>
-
-
 	)}
 
 export default App
