@@ -1,10 +1,22 @@
 import CartWidget from "./CartWidget.js"
 
+import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 const NavBar = () => {
 	return (
 		<>
 			<header>
-				<h1>Andamios<span className="header__VC">VC</span></h1>
+				<Navbar>
+					<Container>
+						<Navbar.Brand href="#home">
+							AndamiosVC
+						</Navbar.Brand>
+					</Container>
+				</Navbar>
+
 				<nav className = "navBar">
 					<ul><a href="#">Módulos</a></ul>
 					<ul><a href="#">Precios</a></ul>

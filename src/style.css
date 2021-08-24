@@ -50,3 +50,7 @@ header h1 {
 	color: red;
 	text-shadow: 0px 0px 2px #3F3F3F;
 }
+
+.cartWidget__icon {
+	height: 30px;
+}

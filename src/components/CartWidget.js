@@ -1,7 +1,12 @@
+import cart_free from "../img/cart_free.png"
+import Button from 'react-bootstrap/Button';
+
 const CartWidget = () => {
 
     return (
-        <i href="#" className="material-icons">shopping_cart</i>
+
+        <Button variant="outline-warning"><img src={cart_free} className="cartWidget__icon" alt="" /></Button>
+
     );
 }
 
