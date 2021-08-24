@@ -5,7 +5,10 @@ import Navbar from 'react-bootstrap/Navbar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+	const {nombre, apellido} = props ;
+
 	return (
 		<>
 			<header>
@@ -16,7 +19,7 @@ const NavBar = () => {
 						</Navbar.Brand>
 					</Container>
 				</Navbar>
-
+				<h1>Bienvenido {nombre} {apellido}!</h1>
 				<nav className = "navBar">
 					<ul><a href="#">Módulos</a></ul>
 					<ul><a href="#">Precios</a></ul>

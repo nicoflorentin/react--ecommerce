@@ -1,0 +1,30 @@
+.counter__container * {
+	/*border: 1px solid red;*/
+}
+
+.counter__container {
+	border: 2px solid black;
+	background-color: #7DABFF;
+	padding: 10px;
+	width: 200px;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+}
+
+.counter__buttonContainer {
+	display: flex;
+
+	width: 70%;
+	border: 3px double black;
+	padding:  10px;
+}
+
+.buttonContainer__button {
+	
+	margin: auto;
+	width: 25%;
+
+}
