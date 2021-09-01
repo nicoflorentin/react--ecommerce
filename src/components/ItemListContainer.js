@@ -5,11 +5,7 @@ import ItemList from './ItemList.js'
 
 const ItemListContainer = () => {
 
-    
-
-
     const promesa = () => {
-
         return new Promise((resolve,reject)=>{
 
             setTimeout( ()=>
@@ -23,7 +19,6 @@ const ItemListContainer = () => {
         })
     } ;
 
-
     const [dataToShow , setDataToShow] = useState([])
 
     useEffect(() => {
@@ -36,14 +31,11 @@ const ItemListContainer = () => {
         )
     }, [])
 
-
     return (
         <>
             <ItemCount stock="10" initial="1" onAdd=""/>
             <ItemList arrayItems={dataToShow}/>
         </>
-
-
     );
 }
 
