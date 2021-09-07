@@ -1,4 +1,5 @@
-import Item from "./Item.js"
+import React from 'react' ;
+import Item from "./Item.js" ;
 
 // style
 import './ItemList.css'
@@ -6,15 +7,13 @@ import './ItemList.css'
 const ItemList = (props) => {
 
     const Items = props.arrayItems ;
-    console.log(Items)
-
 
     return (
 
         <>
             <ul className="ItemListjsUl">
                 {Items.map((element) => (
-                    <Item id={element.id} title={element.title} price={element.precio} pictureURL={element.pictureURL}/>
+                   <li className="itemListLi"><Item key={element.id} title={element.title} price={element.precio} pictureURL={element.pictureURL}/></li>
                 ))}
             </ul>
         </>

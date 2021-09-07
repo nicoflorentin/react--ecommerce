@@ -1,3 +1,8 @@
 .ItemListjsUl {
-	display: flex;
+	display: flex;	
 }
+
+.itemListLi {
+	list-style-type: none;
+}
+

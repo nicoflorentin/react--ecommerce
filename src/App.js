@@ -2,6 +2,7 @@
 import NavBar from "./components/NavBar.js"
 import ItemListContainer from "./components/ItemListContainer.js"
 import ItemCount from './components/ItemCount.js'
+import ItemDetailContainer from './components/ItemDetailContainer.js'
 
 // style
 import './App.css'
@@ -15,6 +16,7 @@ const App = () => {
 			<div className="AppContainer">		
 				<NavBar nombre="Nicolás" apellido="Florentín"/>
 				<ItemListContainer />
+				<ItemDetailContainer />
 			</div>
 		</>
 	)}
