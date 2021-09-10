@@ -1,7 +1,8 @@
-import React, {useEffect, useState} from 'react' ;
+import React, {useEffect, useState} from 'react'
 
 import ItemCount from './ItemCount.js'
 import ItemList from './ItemList.js'
+import {useParams} from 'react-router-dom'
 
 const ItemListContainer = () => {
 
@@ -19,15 +20,19 @@ const ItemListContainer = () => {
         })
     } ;
 
+
+
     const [dataToShow , setDataToShow] = useState([])
+    const {id} = useParams()
+    console.log(id)
 
     useEffect(() => {
 
         promesa().then((data) => {
             setDataToShow(data)
 
-        })},
-        [])
+        })
+    },[id])
 
     return (
         <>

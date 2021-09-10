@@ -5,9 +5,9 @@ import './Item.css'
 
 const Item = (props) => {
 
-    let {id,title,price,pictureURL} = props  
+    let {id,title,price,pictureURL} = props
+    const sPath = "/item/"+id
 
-    console.log(props)  
 
     return (
         <>
@@ -15,7 +15,7 @@ const Item = (props) => {
                 <h1>{title}</h1>
                 <p>Precio : ${price}</p>
                 <img src={pictureURL} alt={title}/>
-                <Link to="/item/:id">
+                <Link to={sPath}>
                     <p>Ver detalles...</p>
                 </Link>
             </li>
