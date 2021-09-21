@@ -1,4 +1,4 @@
-import ItemDetail from './ItemDetail.js'
+import ItemDetail from './ItemDetail.jsx'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 
@@ -23,9 +23,10 @@ const ItemDetailContainer = () => {
 
     }, [id]);
 
-    return ( <
-        > { itemShow && <ItemDetail item={itemShow}/> } <
-        />
+    return ( 
+        <>
+            {itemShow && <ItemDetail item={itemShow}/>}
+        </>
     )
 }
 

@@ -1,4 +1,3 @@
-
 import {useState} from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,10 +6,10 @@ import './ItemCount.css'
 
 const ItemCount = (props) => {
 
-	const {stock , initial , onAdd}= props ;
+	const {stock , initial , onAdd} = props ;
 
 	const stockP = parseInt(stock) ;
-	const initialP = parseInt(initial) ;  
+	const initialP = parseInt(initial) ; 
 
 	const [contador , setContador] = useState(initialP) ;
 
@@ -22,8 +21,9 @@ const ItemCount = (props) => {
 		setContador(contador - 1)
 	}
 
-	function comprarButton() {
-		alert(contador + ' Productos agregados!')
+	function clickOnAdd(){
+		onAdd(contador)
+		setContador(initial)
 	}
 
 	if (contador < 0) {
@@ -42,7 +42,7 @@ const ItemCount = (props) => {
 					<button className="buttonContainer__button" onClick={cambiarContadorMinus}><span>-</span></button>
 					<button className="buttonContainer__button" onClick={cambiarContadorPlus}><span>+</span></button>
 				</div>
-				<button onClick={comprarButton}>Comprar</button>
+				<button onClick={clickOnAdd} >Agregar al carrito</button>
 			</div>
 		</>
 )}

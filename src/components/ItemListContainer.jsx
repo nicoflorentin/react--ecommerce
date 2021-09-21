@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 
-import ItemCount from './ItemCount.js'
-import ItemList from './ItemList.js'
+import ItemCount from './ItemCount.jsx'
+import ItemList from './ItemList.jsx'
 import {useParams} from 'react-router-dom'
 
 const ItemListContainer = () => {
@@ -60,7 +60,7 @@ const ItemListContainer = () => {
 
     return (
         <>
-            <ItemCount stock="10" initial="1" onAdd=""/>
+            {/*<ItemCount stock="10" initial="1" onAdd=""/>*/}
             <ItemList arrayItems={dataToShow}/>
         </>
     );
