@@ -45,8 +45,8 @@ const ItemCount = (props) => {
 					<button className="buttonContainer__button" onClick={cambiarContadorMinus}><span>-</span></button>
 					<button className="buttonContainer__button" onClick={cambiarContadorPlus}><span>+</span></button>
 				</div>
-				<button onClick={ clickOnAdd } >Agregar al carrito</button>
-				<button onClick={ ()=>addProduct(item,contador) }>Probar funcion!</button>
+				{/*<button onClick={ clickOnAdd } >Agregar al carrito</button>*/}
+				<button onClick={ ()=>addProduct(item,contador) }>Agregar al carrito</button>
 
 			</div>
 		</>

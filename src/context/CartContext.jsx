@@ -13,6 +13,7 @@ const CartContext = ({children}) => {
 	
 	const addProduct = (item,quantity) => {
 		console.log(quantity + ' ' + item.descripcion + 's llegaron al contexto!')
+		item.quantity = quantity
 		productos.push(item)
 		console.log(productos)
 		setProductos(productos)
