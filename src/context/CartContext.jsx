@@ -13,9 +13,9 @@ const CartContext = ({children}) => {
 	
 	const addProduct = (item,quantity) => {
 		console.log(quantity + ' ' + item.descripcion + 's llegaron al contexto!')
-		var cart = productos.push(item)
-		console.log('carro : ' + cart)
-		console.log('producto : ' + productos)
+		productos.push(item)
+		console.log(productos)
+		setProductos(productos)
 
 
 	}
