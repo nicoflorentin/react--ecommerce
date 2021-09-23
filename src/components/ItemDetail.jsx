@@ -14,8 +14,8 @@ const ItemDetail = (props) => {
     const [input , setInput] = useState('quantity')
 
     const onAdd = (quantity) => {
-        console.log(`añadido ${quantity}`)
-        setInput('endButton')
+        // console.log(`añadido ${quantity}`)
+        // setInput('endButton')
     }
 
     return (
@@ -27,7 +27,7 @@ const ItemDetail = (props) => {
                 <img src={item.foto} alt={item.descripcion}></img>
 
                 {input === 'quantity' ?
-                    <ItemCount stock={15} initial={1} onAdd={onAdd}/>
+                    <ItemCount stock={15} initial={1} onAdd={onAdd} item={item}/>
                     :
                     <Link to="/cart"><button>Terminar mi compra</button></Link>}
                 

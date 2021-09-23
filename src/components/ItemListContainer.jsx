@@ -43,8 +43,6 @@ const ItemListContainer = () => {
     const [dataToShow , setDataToShow] = useState([])
     const {id} = useParams()
 
-    console.log(id)
-
     useEffect(() => {
 
         promesa().then((data) => {
