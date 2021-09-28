@@ -7,41 +7,46 @@ import './Cart.css'
 
 const Cart = (props) => {
 
-	const { productos, deleteGroup } = useContext(contextoCart) ;
+	const { productos, deleteGroup, clearCart } = useContext(contextoCart) ;
 
 	const [estado , setEstado] = useState(productos)
 
-	console.log("estado del componente")
-	console.log(estado)
-	console.log("productos del componente")
-	console.log(productos)
-
     return (
         <>
-        	<ul>
-            	{productos.map((producto)=>(
-            		<li key={producto.item.id} className="cartItem">
-            			<p>Producto : {producto.item.descripcion}</p>
-            			<p>Precio : {producto.item.precio}</p>
-            			<p>Cantidad : {producto.quantity}</p>
+        	{productos.length != 0 ?
+        		<div>
+		        	<ul>
+		            	{productos.map((producto)=>(
+		            		<li key={producto.item.id} className="cartItem">
+		            			<p>Producto : {producto.item.descripcion}</p>
+		            			<p>Precio : {producto.item.precio}</p>
+		            			<p>Cantidad : {producto.quantity}</p>
 
-            			<button onClick={()=>{
-            				deleteGroup(producto.item.id) ;
-            				console.log("estado")
-            				console.log(estado)
-            				console.log("productos")
-            				console.log(productos)
+		            			<button onClick={()=>{
+		            				deleteGroup(producto.item.id) ;
+		        					setEstado([])
 
-        					setEstado([])
+		            			}}>Eliminar</button>
+		            			
+		            		</li>
+		            	))}
+		            </ul>
 
-            			}}>Eliminar</button>
-            			
-            		</li>
-            	))}
-            </ul>
+		            <h2>Precio Total :</h2>
+		            <Link to="/"><button>Seguir Comprando</button></Link>
+		            <button onClick={ ()=>{clearCart()} }>Vaciar carrito</button>
+		        </div>
 
-            <h2>Precio Total :</h2>
-            <Link to="/"><button>Seguir Comprando</button></Link>
+		        :
+
+		        <div>
+			        <p>El carrito de compras está vacío</p>
+			        <Link to="/"><button>Volver</button></Link>
+		        </div>
+
+        	}
+		        
+
 
         </>
     );

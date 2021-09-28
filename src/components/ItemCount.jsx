@@ -44,7 +44,6 @@ const ItemCount = (props) => {
 				</div>
 				{/*<button onClick={ clickOnAdd } >Agregar al carrito</button>*/}
 				<button onClick={ ()=>{addProduct(item,contador)} }>Agregar al carrito</button>
-				<button onClick={ ()=>{removeProduct(item,contador)} }>Borrar producto</button>
 				<Link to="/cart"><button>Terminar mi compra</button></Link>
 
 			</div>
