@@ -36,7 +36,7 @@ const ItemListContainer = () => {
                     { "id": 23, "categoria": 2, "title": "Producto 23", "precio": 23567, "foto": "asd.png" },
                     { "id": 24, "categoria": 2, "title": "Producto 24", "precio": 23678, "foto": "asd.png" },
                     { "id": 25, "categoria": 2, "title": "Producto 25", "precio": 1378, "foto": "asd.png" }
-                ]), 2000)
+                ]), 1)
         })
     };
 

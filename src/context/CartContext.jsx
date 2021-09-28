@@ -22,10 +22,24 @@ const CartContext = ({ children }) => {
                 productos.push({ item: newItem, quantity: quantity })
                 // seteo el state
                 setProductos(productos)
+                console.log("productos agregados")
+                console.log(productos)
             }
         }
 
-        const removeProduct = (id) => { }
+        const deleteGroup = (id) => {
+            productos.forEach(element => {
+                if (element.item.id == id) {
+                    var index = productos.indexOf(element)
+                    console.log("index : " + index)
+                    productos.splice(index, 1)
+
+                    setProductos(productos)
+                    // console.log(element + " borrado")
+                    // console.log(productos)
+                }
+            })
+        };
 
         const clearCart  = () => {
             setProductos([])
@@ -36,7 +50,7 @@ const CartContext = ({ children }) => {
         }
 
         return (
-                <Provider value={{ productos,addProduct,removeProduct,clearCart }}>
+                <Provider value={ {productos,addProduct,clearCart, deleteGroup,setProductos} }>
 			{children}
 		</ Provider>
 	)

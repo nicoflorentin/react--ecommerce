@@ -17,9 +17,8 @@ const ItemDetailContainer = () => {
                 .then((data) => {
                     const aux = data.find(data => data.id == id)
                     setItemShow(aux)
-
                 });
-        }, 2000)
+        }, 1)
 
     }, [id]);
 
