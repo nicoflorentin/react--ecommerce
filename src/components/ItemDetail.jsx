@@ -3,23 +3,22 @@ import ItemCount from './ItemCount.jsx'
 import {useState} from 'react'
 // Router
 import {Link} from 'react-router-dom'
- 
+
 // style
 import './ItemDetail.css'
 
 const ItemDetail = (props) => {
 
     const item = props.item
-
     const [input , setInput] = useState('quantity')
 
     return (
         <>
             <div className="itemDetail">
                 <h1>Detalle del producto:</h1>
-                <p>Descripción : {item.descripcion}</p>
-                <p>Precio : ${item.precio}</p>
-                <img src={item.foto} alt={item.descripcion}></img>
+                <p>Descripción : {item.description}</p>
+                <p>Precio : ${item.price}</p>
+                <img src={item.imgURL} alt={item.description}></img>
 
                 {input === 'quantity' ?
                     <ItemCount stock={15} initial={1} item={item}/>

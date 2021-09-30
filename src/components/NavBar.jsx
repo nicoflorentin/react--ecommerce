@@ -16,7 +16,6 @@ const NavBar = (props) => {
     const [estado , setEstado] = useState(productos)
 
     useEffect( ()=> {
- 		alert("entre!")
     	setEstado(productos)
     },[])
 

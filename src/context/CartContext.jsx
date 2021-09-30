@@ -50,8 +50,8 @@ const CartContext = ({ children }) => {
 				productos,
 				addProduct,
 				clearCart,
-				deleteGroup}
-			}>
+				deleteGroup
+			}}>
 
 			  {children}
 

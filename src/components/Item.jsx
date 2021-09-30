@@ -8,7 +8,6 @@ const Item = (props) => {
     let {id,title,price,pictureURL} = props
     const sPath = "/item/"+id
 
-
     return (
         <>
             <li className = "ItemjsItem">

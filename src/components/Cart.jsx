@@ -8,7 +8,6 @@ import './Cart.css'
 const Cart = (props) => {
 
 	const { productos, deleteGroup, clearCart } = useContext(contextoCart) ;
-
 	const [estado , setEstado] = useState(productos)
 
     return (
@@ -18,8 +17,8 @@ const Cart = (props) => {
 		        	<ul>
 		            	{productos.map((producto)=>(
 		            		<li key={producto.item.id} className="cartItem">
-		            			<p>Producto : {producto.item.descripcion}</p>
-		            			<p>Precio : {producto.item.precio}</p>
+		            			<p>Producto : {producto.item.description}</p>
+		            			<p>Precio : {producto.item.price}</p>
 		            			<p>Cantidad : {producto.quantity}</p>
 
 		            			<button onClick={()=>{

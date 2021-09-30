@@ -10,13 +10,15 @@ const CartWidget = (props) => {
 
 	const {productos} = useContext(contextoCart)
 
+    const number = productos.length
+
 
     return (
 
         <>
 
             <Link to="/cart"><Button variant="outline-warning"><img src={cart_free} className="cartWidget__icon" alt="" /></Button></Link>
-            <p></p>
+            <p>{number}</p>
         </>
     );
 }
