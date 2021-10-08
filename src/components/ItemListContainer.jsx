@@ -18,29 +18,24 @@ const ItemListContainer = () => {
         const collection = dataBase.collection("productos")
         // hago un query
         const query = collection.get()
-        // console.log("query")
-        // console.log(query)
+        
         const productos = []
         // el query tiene una promesa
         query.then((snapshot)=>{
             // obtengo un snapshot de documentos en array
             const docs = snapshot.docs
-            // recorro el array para ver cada snapshopDocument
+            // recorro el array para ver cada snapshotDocument
             docs.forEach((doc)=>{
                 const docSnapshot = doc
                 // creo un objeto nuevo con las mismas propiedades mas la clave id
                 const productoConId = {...docSnapshot.data(), id:docSnapshot.id}
                 productos.push(productoConId)
             })
-
             if (id) {
                 setDataToShow(productos.filter(producto => producto.categoryID == id))
-                console.log("id")
-                console.log(id)
-                console.log("productos")
                 console.log(productos)
             } else {
-                setDataToShow(productos)
+                setDataToShow([...productos])
             }
         })
         .catch((error)=>{
@@ -51,7 +46,6 @@ const ItemListContainer = () => {
 
     return (
         <>
-            {/*<ItemCount stock="10" initial="1" onAdd=""/>*/}
             <ItemList arrayItems={dataToShow}/>
         </>
     );

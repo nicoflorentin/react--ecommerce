@@ -1,5 +1,5 @@
-import ItemDetail from './ItemDetail.jsx'
 import React, { useEffect, useState } from 'react'
+import ItemDetail from './ItemDetail.jsx'
 import { useParams } from 'react-router-dom'
 
 import { firestore, getDoc } from '../Firebase'
@@ -26,7 +26,6 @@ const ItemDetailContainer = () => {
         .catch((error)=>{
             console.log(error)
         })
-
     },[id])
 
     return ( 

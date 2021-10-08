@@ -4,15 +4,15 @@ import Item from "./Item.jsx";
 // style
 import './ItemList.css'
 
-const ItemList = (props) => {
+const ItemList = ({arrayItems}) => {
 
-    const Items = props.arrayItems;
+    const Items = arrayItems
 
     return (
         <>
             <ul className="ItemListjsUl">
                 {Items.map((element) => (
-                   <li className="itemListLi"><Item id={element.id} key={element.id} title={element.title} price={element.price} pictureURL={element.pictureURL}/></li>
+                   <li className="itemListLi" key={element.id}><Item id={element.id} title={element.title} price={element.price} pictureURL={element.pictureURL}/></li>
                 ))}
             </ul>
         </>

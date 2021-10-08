@@ -1,6 +1,5 @@
-import React from 'react'
+import React , {useState} from 'react'
 import ItemCount from './ItemCount.jsx'
-import {useState} from 'react'
 // Router
 import {Link} from 'react-router-dom'
 
@@ -19,9 +18,8 @@ const ItemDetail = (props) => {
                 <p>Descripción : {item.description}</p>
                 <p>Precio : ${item.price}</p>
                 <img src={item.imgURL} alt={item.description}></img>
-
                 {input === 'quantity' ?
-                    <ItemCount stock={15} initial={1} item={item}/>
+                    <ItemCount stock={item.stock} initial={1} item={item}/>
                     :
                     <Link to="/cart"><button>Terminar mi compra</button></Link>}
                 
