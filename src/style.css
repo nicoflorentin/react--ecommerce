@@ -2,15 +2,12 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-
-	/*border: 1px solid black;*/
 }
 
 header {
 
 	box-shadow: 0px 2px 2px #565656;
 	background-color: #7DABFF;
-	/*width: 90%;*/
 
 	margin: auto;
 	padding: 1vw;

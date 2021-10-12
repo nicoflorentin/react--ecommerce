@@ -9,6 +9,7 @@ import { firestore } from '../Firebase'
 const ItemListContainer = () => {
 
     const [dataToShow , setDataToShow] = useState([])
+    const [loaded , setLoaded] = useState(false)
     const {id} = useParams()
 
     useEffect( ()=>{
@@ -30,6 +31,8 @@ const ItemListContainer = () => {
                 // creo un objeto nuevo con las mismas propiedades mas la clave id
                 const productoConId = {...docSnapshot.data(), id:docSnapshot.id}
                 productos.push(productoConId)
+
+                setLoaded(true)
             })
             if (id) {
                 setDataToShow(productos.filter(producto => producto.categoryID == id))
@@ -46,7 +49,10 @@ const ItemListContainer = () => {
 
     return (
         <>
-            <ItemList arrayItems={dataToShow}/>
+            {loaded
+                ?   <ItemList arrayItems={dataToShow}/>
+                :   <p>Cargando...</p>
+            }
         </>
     );
 }

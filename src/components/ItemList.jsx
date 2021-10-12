@@ -2,7 +2,7 @@ import React from 'react';
 import Item from "./Item.jsx";
 
 // style
-import './ItemList.css'
+import '../styles/ItemList.css'
 
 const ItemList = ({arrayItems}) => {
 

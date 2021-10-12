@@ -3,19 +3,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ContextoCart from '../context/CartContext.jsx'
 import { Link } from 'react-router-dom'
 
-import './ItemCount.css'
+import '../styles/ItemCount.css'
 
 
 const ItemCount = (props) => {
 	
 	const {stock , initial , item} = props ;
-	// parseo el stock y el initial
 	const stockP = parseInt(stock) ;
 	const initialP = parseInt(initial) ; 
-	// defino las variables del estado
-	const [contador , setContador] = useState(initialP) ;
-	// traigo las variables del contexto
+	// context vars
 	const { productos, addProduct, removeProduct } = useContext(ContextoCart)
+	// state
+	const [contador , setContador] = useState(initialP) ;
 
 	function cambiarContadorPlus() {
 		setContador(contador + 1)
@@ -42,6 +41,7 @@ const ItemCount = (props) => {
 				<div className="counter__buttonContainer">	
 					<button className="buttonContainer__button" onClick={cambiarContadorMinus}><span>-</span></button>
 					<button className="buttonContainer__button" onClick={cambiarContadorPlus}><span>+</span></button>
+					
 				</div>
 				{/*<button onClick={ clickOnAdd } >Agregar al carrito</button>*/}
 				<button onClick={ ()=>{addProduct(item,contador);countToInitial()} }>Agregar al carrito</button>

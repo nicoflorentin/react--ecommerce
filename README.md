@@ -1,70 +1,28 @@
-# Getting Started with Create React App
+# Readme
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Éste es un proyecto de desarrollo Front End de un E-Commerce realizado para el curso de React Js brindado por la plataforma educativa on-line CoderHouse.
 
-## Available Scripts
+Las principales funcionalidades de la aplicacion son..
 
-In the project directory, you can run:
+	-	Consultar una base de datos (firebase) para traer una lista de productos.
+	-	Mostrar una lista de productos general.
+	-	Mostrar una lista de productos por categoría.
+	-	Implementar un carrito de compras con actualización en tiempo real.
+	-	Controles de interfaz para borrar items del carrito o vaciarlo completamente.
+	-	Mostrar una vista con el detalle de un producto y los controles de interfaz necesarios para gestionar la compra.
+	-	Un formulario para completar los datos de la transaccion y guardar un elemento único por compra.
 
-### `npm start`
+## Tecnologías implementadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Bootstrap (v5.1.0): 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Bootstrap es una biblioteca multiplataforma o conjunto de herramientas de código abierto para diseño de sitios y aplicaciones web. Contiene plantillas de diseño con tipografía, formularios, botones, cuadros, menús de navegación y otros elementos de diseño basado en HTML y CSS, así como extensiones de JavaScript adicionales. A diferencia de muchos frameworks web, solo se ocupa del desarrollo front-end
 
-### `npm test`
+### React router dom (v5.3.0): 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+React Router es una colección de componentes de navegación la cual podemos usar tanto en web o en móvil con React Native. Con esta librearía vamos a obtener un enrutamiento dinámico gracias a los componentes, se crean rutas que renderizan un componente.
 
-### `npm run build`
+## DEMO : 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![demo-readme](https://giphy.com/gifs/Rz3Tc02wVfJVBaFaIU)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

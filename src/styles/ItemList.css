@@ -1,5 +1,7 @@
 .ItemListjsUl {
-	display: flex;	
+	display: flex;
+	justify-content: center;
+	margin-top: 3vh;
 }
 
 .itemListLi {

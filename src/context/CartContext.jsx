@@ -8,6 +8,12 @@ const CartProvider = ({ children }) => {
 
 		const [productos, setProductos] = useState([])
 
+		var total = 0
+
+		productos.forEach( (element) => {
+			total += element.item.price*element.quantity
+		})
+
 		// consulta carrito
 		const isInCart = (id) => {
 			return productos.find(producto => producto.item.id === id)
@@ -46,25 +52,12 @@ const CartProvider = ({ children }) => {
 			setProductos([])
 		}
 
-		const render = () => {
-			setProductos([{	item:
-								{categoryID: 1,
-								description: "Este es el producto 1",
-								id: "Kuq2EftoRrgnLrhDHdXN",
-								imgURL: "http://img.com/imagen1",
-								price: 1590,
-								stock: 10,
-								title: "Producto 1"},
-							quantity: 1
-			}])
-		}
-
 		const data = { 	productos,
 						addProduct,
 						clearCart,
 						deleteGroup, 
 						setProductos,
-						render
+						total
 					}
 
 		return (

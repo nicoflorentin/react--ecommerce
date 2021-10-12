@@ -8,6 +8,7 @@ const ItemDetailContainer = () => {
 
     const { id } = useParams()
     const [itemShow, setItemShow] = useState();
+    const [loaded , setLoaded] = useState(false)
 
     useEffect(()=>{
         // referencia a la base de datos
@@ -22,6 +23,8 @@ const ItemDetailContainer = () => {
         productoQuery.then((prod)=>{
         // traduzco el documento y seteo el estado
         setItemShow({...prod.data(), id:id})
+
+        setLoaded(true)
         })
         .catch((error)=>{
             console.log(error)
@@ -30,7 +33,10 @@ const ItemDetailContainer = () => {
 
     return ( 
         <>
-            {itemShow && <ItemDetail item={itemShow}/>}
+            {loaded
+                ? itemShow && <ItemDetail item={itemShow}/>
+                : <p>Cargando...</p>
+            }        
         </>
     )
 }

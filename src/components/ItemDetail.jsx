@@ -4,7 +4,7 @@ import ItemCount from './ItemCount.jsx'
 import {Link} from 'react-router-dom'
 
 // style
-import './ItemDetail.css'
+import '../styles/ItemDetail.css'
 
 const ItemDetail = (props) => {
 

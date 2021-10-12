@@ -1,78 +1,63 @@
 import React , { useContext, useState } from 'react'
+import CartForm from '../components/CartForm.jsx'
 import ContextoCart from '../context/CartContext.jsx'
 import { Link } from 'react-router-dom'
 import { firestore } from '../Firebase'
 
-import './Cart.css'
+import '../styles/Cart.css'
 
 const Cart = (props) => {
 
 	console.log('cart render')
 
-	const [inputName, setInputName] = useState(null)
-	const [inputPhone, setInputPhone] = useState(null)
-	const [inputMail, setInputMail] = useState(null)
-	const [confirm, setConfirm] = useState({})
-	const { productos, deleteGroup, clearCart, setProductos,render } = useContext(ContextoCart) ;
+	const [confirm, setConfirm] = useState(null)
+	const { productos, deleteGroup, clearCart, setProductos, total } = useContext(ContextoCart) ;
 
-	console.log(productos)
-	var total = 0
-
-	productos.forEach( (element) => {
-		total += element.item.price*element.quantity
-	});
-
-	const formattedProds = productos.map(element=>(
+	const confirmCart = (name , phone , mail) => {
+		const oDate = new Date()
+		const dateAndTime = `${oDate.getMonth()}-${oDate.getDate()}-${oDate.getFullYear()} , ${oDate.getHours()}:${oDate.getMinutes().length === 1?'0':''}${oDate.getMinutes()}:${oDate.getSeconds().length === 1?'0':''}${oDate.getSeconds()}hs`
+		const db = firestore
+		const newCollection = firestore.collection("orders") 
+		const formattedProds = productos.map(element=>(
 			{
 				id:element.item.id,
 				title:element.item.description,
 				price:element.item.price
 			}
-	))
-
-	const storeName = (e) => {
-		setInputName(e.target.value)
-	}
-
-	const storePhone = (e) => {
-		setInputPhone(e.target.value)
-	}
-
-	const storeMail = (e) => {
-		setInputMail(e.target.value)
-	}
-
-	const confirmCart = () => {
-		const oDate = new Date()
-		const dateAndTime = `${oDate.getMonth()}-${oDate.getDate()}-${oDate.getFullYear()} , ${oDate.getHours()}:${oDate.getMinutes().length == 1?'0':''}${oDate.getMinutes()}:${oDate.getSeconds().length == 1?'0':''}${oDate.getSeconds()}hs`
-		const db = firestore
-		const newCollection = firestore.collection("orders")
+		))
 
 		const order =
 			{
 				buyer:
 				{
-					name:inputName,
-					phone:inputPhone,
-					email:inputMail
+					name:name,
+					phone:phone,
+					email:mail
 				},
 				items:formattedProds,
 					date:dateAndTime,
 					total:total
 			}
 			
-		console.log('order',order)
-		setConfirm({...order})
-		const query = newCollection.add(order)
+		console.log('order',order) ; 
+		setConfirm({...order}) ;
 
-		query.then( ()=>{console.log("orden finalizada")})
+		if (order) {
+			const query = newCollection.add(order)
+			query.then( ()=>{console.log("orden finalizada")} )
+		} else {
+			console.log('orden rechazada')
+		}
+		
+		
+	
 	}
 
     return (
         <>
         	{productos.length != 0
 	        	?	<div>
-			        	<ul>
+			        	<ul className="cartList">
 			            	{productos.map((producto)=>(
 			            		<li key={producto.item.id} className="cartItem">
 			            			<p>Producto: {producto.item.description}</p>
@@ -85,20 +70,16 @@ const Cart = (props) => {
 			            			>Eliminar</button>
 			            			
 			            		</li>
-			            	))}
+            				))}
 			            </ul>
-			            <h2>Precio Total: ${total}</h2>
-			            {/*FORM*/}
-			            <p>Nombre :</p>
-			            <input type="text" onChange={storeName}></input>
-			            <p>Teléfono</p>
-			            <input type="text" onChange={storePhone}></input>
-			            <p>Email :</p>
-			            <input type="text" onChange={storeMail}></input>
-			            <br/>
-			            <button onClick={ confirmCart }>Confirmar Compra</button>
-			            <button onClick={ clearCart }>Vaciar carrito</button><br/>
-			            <Link to="/"><button>Seguir Comprando</button></Link>
+
+			            <div className="cartBarContainer">
+							<button onClick={ clearCart }>Vaciar carrito</button><br/>
+							<Link to="/"><button>Seguir Comprando</button></Link>
+							<h2>Precio Total: ${total}</h2>
+						</div>
+
+						<CartForm confirmCart={ confirmCart }/>
 			        </div>
 			        
 		        :	<div>
