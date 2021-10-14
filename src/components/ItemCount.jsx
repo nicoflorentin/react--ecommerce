@@ -12,7 +12,7 @@ const ItemCount = (props) => {
 	const stockP = parseInt(stock) ;
 	const initialP = parseInt(initial) ; 
 	// context vars
-	const { productos, addProduct, removeProduct } = useContext(ContextoCart)
+	const { addProduct} = useContext(ContextoCart)
 	// state
 	const [contador , setContador] = useState(initialP) ;
 

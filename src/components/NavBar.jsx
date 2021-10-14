@@ -1,4 +1,4 @@
-import React , { useState , useContext } from 'react'
+import React , { useContext } from 'react'
 import CartWidget from "./CartWidget.jsx"
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,8 +10,8 @@ import {Link} from 'react-router-dom'
 
 const NavBar = (props) => {
 
-	const {productos} = useContext(ContextoCart)
-	const {nombre, apellido} = props ;
+	const { productos } = useContext(ContextoCart)
+	const { nombre, apellido } = props ;
 
 	return (
 		<>
@@ -30,7 +30,7 @@ const NavBar = (props) => {
 					<ul><Link to="/categoria/1">Categoría 1</Link></ul>
 					<ul><Link to="/categoria/2">Categoría 2</Link></ul>
 				</nav>
-				<CartWidget productos={productos}/>
+				<CartWidget productos={ productos }/>
 			</header>
 		</>
 )}

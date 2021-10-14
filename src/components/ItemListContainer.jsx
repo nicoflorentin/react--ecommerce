@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react'
-
-import ItemCount from './ItemCount.jsx'
 import ItemList from './ItemList.jsx'
 import { useParams } from 'react-router-dom'
 
@@ -10,7 +8,9 @@ const ItemListContainer = () => {
 
     const [dataToShow , setDataToShow] = useState([])
     const [loaded , setLoaded] = useState(false)
+
     const {id} = useParams()
+    const idNum = parseInt(id)
 
     useEffect( ()=>{
         // referencia a la base de datos
@@ -34,9 +34,8 @@ const ItemListContainer = () => {
 
                 setLoaded(true)
             })
-            if (id) {
-                setDataToShow(productos.filter(producto => producto.categoryID == id))
-                console.log(productos)
+            if (idNum) {
+                setDataToShow(productos.filter(producto => producto.categoryID === idNum ))
             } else {
                 setDataToShow([...productos])
             }
@@ -45,7 +44,7 @@ const ItemListContainer = () => {
             console.log(error)
         })
 
-    },[id])
+    },[idNum])
 
     return (
         <>

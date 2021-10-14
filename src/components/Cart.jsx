@@ -1,4 +1,4 @@
-import React , { useContext, useState } from 'react'
+import React , { useContext } from 'react'
 import CartForm from '../components/CartForm.jsx'
 import ContextoCart from '../context/CartContext.jsx'
 import { Link } from 'react-router-dom'
@@ -8,15 +8,11 @@ import '../styles/Cart.css'
 
 const Cart = (props) => {
 
-	console.log('cart render')
-
-	const [confirm, setConfirm] = useState(null)
-	const { productos, deleteGroup, clearCart, setProductos, total } = useContext(ContextoCart) ;
+	const { productos, deleteGroup, clearCart, total } = useContext(ContextoCart) ;
 
 	const confirmCart = (name , phone , mail) => {
 		const oDate = new Date()
 		const dateAndTime = `${oDate.getMonth()}-${oDate.getDate()}-${oDate.getFullYear()} , ${oDate.getHours()}:${oDate.getMinutes().length === 1?'0':''}${oDate.getMinutes()}:${oDate.getSeconds().length === 1?'0':''}${oDate.getSeconds()}hs`
-		const db = firestore
 		const newCollection = firestore.collection("orders") 
 		const formattedProds = productos.map(element=>(
 			{
@@ -35,27 +31,17 @@ const Cart = (props) => {
 					email:mail
 				},
 				items:formattedProds,
-					date:dateAndTime,
-					total:total
+				date:dateAndTime,
+				total:total
 			}
-			
-		console.log('order',order) ; 
-		setConfirm({...order}) ;
 
-		if (order) {
-			const query = newCollection.add(order)
-			query.then( ()=>{console.log("orden finalizada")} )
-		} else {
-			console.log('orden rechazada')
-		}
-		
-		
-	
+		const query = newCollection.add(order)
+		query.then( ()=>{console.log("orden finalizada")} )
 	}
 
     return (
         <>
-        	{productos.length != 0
+        	{productos.length !== 0
 	        	?	<div>
 			        	<ul className="cartList">
 			            	{productos.map((producto)=>(

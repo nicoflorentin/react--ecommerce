@@ -2,7 +2,6 @@ import React from 'react'
 // import components
 import NavBar from "./components/NavBar.jsx"
 import ItemListContainer from "./components/ItemListContainer.jsx"
-import ItemCount from './components/ItemCount.jsx'
 import ItemDetailContainer from './components/ItemDetailContainer.jsx'
 import {CartProvider} from './context/CartContext.jsx'
 import Cart from './components/Cart.jsx'

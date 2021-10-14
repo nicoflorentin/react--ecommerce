@@ -3,9 +3,7 @@ import React , { useState, createContext } from 'react'
 const ContextoCart = createContext()
 
 const CartProvider = ({ children }) => {
-
-		console.log("cartcontext render")
-
+	
 		const [productos, setProductos] = useState([])
 
 		var total = 0
@@ -22,7 +20,6 @@ const CartProvider = ({ children }) => {
 		// agregar producto
 		const addProduct = (newItem, quantity) => {
 			if (isInCart(newItem.id)) {
-				console.log('entre en el if')
 				productos.forEach(element => {
 					if (element.item.id === newItem.id) {
 						element.quantity += quantity
