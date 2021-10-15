@@ -2,7 +2,7 @@
 
 Éste es un proyecto de desarrollo Front End de un E-Commerce realizado para el curso de React Js brindado por la plataforma educativa on-line CoderHouse.
 
-Las principales funcionalidades de la aplicacion son..
+Las principales funcionalidades de la aplicacion son
 
 	-	Consultar una base de datos (firebase) para traer una lista de productos.
 	-	Mostrar una lista de productos general.
